@@ -1,6 +1,5 @@
 package com.example.crimedetection;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -16,25 +15,69 @@ import android.widget.TextView;
 public class EmergencyContacts extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
-    private TextView calltxt;
-    private Button callbutton;
+    private TextView calltext,calltext1,calltext2;
+    private Button callbutton,callBtn1,callBtn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency_contacts);
-        calltxt = findViewById(R.id.calltext);
+
+        calltext1 = findViewById(R.id.calltext1);
+        calltext2 = findViewById(R.id.calltext2);
+        calltext = findViewById(R.id.calltext);
+
         callbutton = findViewById(R.id.callBtn);
+        callBtn1 = findViewById(R.id.callBtn1);
+        callBtn2 = findViewById(R.id.callBtn2);
         callbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CallButton();
             }
         });
+
+        callBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CallButton1();
+            }
+        });
+
+        callBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CallButton2();
+            }
+        });
     }
 
     private void CallButton() {
-        String number = calltxt.getText().toString();
+        String number = calltext.getText().toString();
+        if (number.trim().length() > 0){
+            if (ContextCompat.checkSelfPermission(EmergencyContacts.this,Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions(EmergencyContacts.this,new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL );
+            } else {
+                String dial = "tel:" +number;
+                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+            }
+        }
+    }
+
+    private void CallButton1() {
+        String number = calltext1.getText().toString();
+        if (number.trim().length() > 0){
+            if (ContextCompat.checkSelfPermission(EmergencyContacts.this,Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions(EmergencyContacts.this,new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL );
+            } else {
+                String dial = "tel:" +number;
+                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+            }
+        }
+    }
+
+    private void CallButton2() {
+        String number = calltext2.getText().toString();
         if (number.trim().length() > 0){
             if (ContextCompat.checkSelfPermission(EmergencyContacts.this,Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(EmergencyContacts.this,new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL );
