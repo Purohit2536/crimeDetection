@@ -1,4 +1,4 @@
-package com.example.crimedetection;
+package com.example.crimeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
