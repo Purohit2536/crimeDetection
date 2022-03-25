@@ -1,11 +1,15 @@
 package com.example.crimedetection;
 
 import androidx.annotation.NonNull;
+
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,12 +27,22 @@ public class HomePage extends FragmentActivity implements OnMapReadyCallback {
     SupportMapFragment mapFragment;
     GoogleMap map;
     private SearchView Searchview;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        btn = findViewById(R.id.Emergencybtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(HomePage.this,EmergencyContacts.class);
+                startActivity(i);
+            }
+        });
         Searchview = findViewById(R.id.Searchview );
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         assert mapFragment != null;
