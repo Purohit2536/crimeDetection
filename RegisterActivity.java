@@ -1,4 +1,4 @@
-package com.example.crimedetection;
+package com.example.crimeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         }
-        }
+    }
     private void showerror(EditText input, String s) {
         input.setError(s);
         input.requestFocus();
