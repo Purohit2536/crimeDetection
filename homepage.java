@@ -1,4 +1,4 @@
-package com.example.crimedetection;
+package com.example.crimeapp;
 
 import androidx.annotation.NonNull;
 
