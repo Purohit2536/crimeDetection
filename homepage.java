@@ -1,26 +1,26 @@
 package com.example.crimeapp;
 
 import androidx.annotation.NonNull;
-
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,6 +37,29 @@ public class HomePage extends FragmentActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem menuitem) {
+
+                switch (menuitem.getItemId()){
+                    case R.id.crime: startActivity(new Intent(getApplicationContext(),Crime_Activity.class));
+                    overridePendingTransition(0,0);
+                    return;
+
+                    case R.id.home:
+                        return;
+
+                    case R.id.addimage: startActivity(new Intent(getApplicationContext(),ImageActivity.class));
+                        overridePendingTransition(0,0);
+                        return;
+                }
+            }
+        });
+
         btn = findViewById(R.id.Emergencybtn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +69,7 @@ public class HomePage extends FragmentActivity implements OnMapReadyCallback {
                 startActivity(i);
             }
         });
+
         Searchview = findViewById(R.id.Searchview);
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         assert mapFragment != null;
@@ -64,7 +88,7 @@ public class HomePage extends FragmentActivity implements OnMapReadyCallback {
                 }
                 Address address = addressList.get(0);
                 LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
                 return false;
             }
 
@@ -113,6 +137,5 @@ public class HomePage extends FragmentActivity implements OnMapReadyCallback {
             return;
         }
         googleMap.setMyLocationEnabled(true);
-
     }
 }
