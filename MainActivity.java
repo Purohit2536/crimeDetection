@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView button;
     EditText textpassword,textusername;
     Button btnlogin;
     @Override
@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
         textusername = findViewById(R.id.textusername);
         textpassword = findViewById(R.id.textpassword);
 
-        TextView btn = findViewById(R.id.btnSignUp);
-        btn.setOnClickListener(new View.OnClickListener() {
+        button = findViewById(R.id.ButtonSignUp);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i =new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(i);
             }
         });
-
         btnlogin = findViewById(R.id.btnlogin);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
