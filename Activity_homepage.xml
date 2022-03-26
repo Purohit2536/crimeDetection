@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -12,7 +13,7 @@
         android:layout_height="731dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -31,17 +32,27 @@
 
     <Button
         android:id="@+id/Emergencybtn"
-        android:layout_width="48dp"
+        android:layout_width="55dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="64dp"
-        android:background="@drawable/button_round"
-        android:text="ER"
-        app:layout_constraintBottom_toBottomOf="@+id/map"
+        android:layout_marginTop="504dp"
+        android:background="@drawable/bg_round"
+        android:text="@string/er"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="0.997"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Searchview"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintTop_toBottomOf="@+id/Searchview" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="411dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
