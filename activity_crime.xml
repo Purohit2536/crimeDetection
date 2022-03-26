@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Crime_Activity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="411dp"
+        android:layout_height="55dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <Button
+        android:id="@+id/Murderbtn"
+        android:text="Murder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CrimeTypes" />
+
+    <Button
+        android:id="@+id/Violencebtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Violence"
+        app:layout_constraintEnd_toEndOf="@+id/Murderbtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Murderbtn"
+        app:layout_constraintTop_toBottomOf="@+id/Murderbtn" />
+
+    <TextView
+        android:id="@+id/CrimeTypes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Types oF Crimes"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <Button
+        android:id="@+id/Firingbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Firing"
+        app:layout_constraintEnd_toEndOf="@+id/Violencebtn"
+        app:layout_constraintStart_toStartOf="@+id/Violencebtn"
+        app:layout_constraintTop_toBottomOf="@+id/Violencebtn" />
+
+    <Button
+        android:id="@+id/Bomb_Blast"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Bomb Blast"
+        app:layout_constraintEnd_toEndOf="@+id/Robberybtn"
+        app:layout_constraintStart_toStartOf="@+id/Robberybtn"
+        app:layout_constraintTop_toBottomOf="@+id/Robberybtn" />
+
+    <Button
+        android:id="@+id/Robberybtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Robbery"
+        app:layout_constraintEnd_toEndOf="@+id/Firingbtn"
+        app:layout_constraintStart_toStartOf="@+id/Firingbtn"
+        app:layout_constraintTop_toBottomOf="@+id/Firingbtn" />
+
+    <Button
+        android:id="@+id/Kidnappingbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Kidnapping"
+        app:layout_constraintEnd_toEndOf="@+id/Bomb_Blast"
+        app:layout_constraintStart_toStartOf="@+id/Bomb_Blast"
+        app:layout_constraintTop_toBottomOf="@+id/Bomb_Blast" />
+
+    <Button
+        android:id="@+id/Burglarybtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Burglary"
+        app:layout_constraintEnd_toEndOf="@+id/Kidnappingbtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Kidnappingbtn"
+        app:layout_constraintTop_toBottomOf="@+id/Kidnappingbtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
