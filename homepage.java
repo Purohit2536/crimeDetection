@@ -21,16 +21,19 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 import java.util.List;
 
-public class HomePage extends FragmentActivity implements OnMapReadyCallback {
+public class
+HomePage extends FragmentActivity implements OnMapReadyCallback {
 
     SupportMapFragment mapFragment;
     GoogleMap map;
     private SearchView Searchview;
     private Button btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class HomePage extends FragmentActivity implements OnMapReadyCallback {
         bottomNavigationView.setSelectedItemId(R.id.home);
 
         bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+
+
+
             @Override
             public void onNavigationItemReselected(@NonNull MenuItem menuitem) {
 
