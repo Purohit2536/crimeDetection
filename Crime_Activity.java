@@ -72,7 +72,7 @@ public class Crime_Activity extends AppCompatActivity {
             }
         });
 
-        Murderbtn = findViewById(R.id.Bomb_Blast);
+        Murderbtn = findViewById(R.id.IdentityTheft);
         Murderbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
